@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php include(TEMPLATEPATH . '/template_header_home.php'); ?>
+<?php include(TEMPLATEPATH . '/partials/header_home.php'); ?>
 <div id="wrap">
 <section id="main-loop">
 	<header class="section-title">
@@ -28,9 +28,9 @@
 			<h3>&mdash; Blog Archives</h3>
 
 		<?php } ?>
-	</header>	
+	</header>
 
-<div id="array">		
+<div id="array">
 <?php while (have_posts()) : the_post(); ?>
 		<article class="post-box">
 			<a href="<?php the_permalink() ?>" rel="bookmark"><?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'grid-thumb' ); } ?></a>
@@ -40,7 +40,7 @@
 			</aside>
 			<section class="excerpt">
 				<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_excerpt(); ?></a>
-			</section>			
+			</section>
 		</article>
 <?php endwhile; ?>
 	</div><!--#array-->
@@ -66,8 +66,8 @@
 	</nav>
 <?php else : ?>
 	<header class="section-title">
-		<h3>404 &mdash; Not Found</h3> 
+		<h3>404 &mdash; Not Found</h3>
 		<p class="oops">Sorry, but the requested resource was not found on this site.</p>
-	</header>	
+	</header>
 <?php endif; ?>
 <?php get_footer(); ?>

@@ -1,10 +1,7 @@
 <?php get_header(); ?>
-<?php include(TEMPLATEPATH . '/template_header_home.php'); ?>
+<?php include(TEMPLATEPATH . '/partials/header_home.php'); ?>
 <div id="wrap">
 <section id="main">
-	<header class="section-title">
-		<h3>404 &mdash; Not Found</h3> 
-		<p class="oops">Sorry, but the requested resource was not found on this site.</p>
-	</header>	
+	<?php include(TEMPLATEPATH . '/partials/error.php'); ?>
 </section>
 <?php get_footer(); ?>

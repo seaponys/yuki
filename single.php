@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php include(TEMPLATEPATH . '/template_header_inner.php'); ?>
+<?php include(TEMPLATEPATH . '/partials/header_inner.php'); ?>
 <div id="wrap">
 <section id="main">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -24,17 +24,14 @@
 			</article><!--entry-->
 			<?php comments_template(); ?>
 		</section><!--post-single-->
-					
+
 		<nav class="post-links col-last one-third">
 			<?php previous_post_link('%link','Older',FALSE); ?>
 			<?php next_post_link('%link', 'Newer', FALSE); ?>
-		</nav>	
+		</nav>
 	</div>
 <?php endwhile; else: ?>
-	<header class="section-title">
-		<h3>404 &mdash; Not Found</h3> 
-		<p class="oops">Sorry, but the requested resource was not found on this site.</p>
-	</header>	
+	<?php include(TEMPLATEPATH . '/partials/error.php'); ?>
 <?php endif; ?>
 </section><!--#main-->
 <?php get_footer(); ?>

@@ -1,4 +1,4 @@
-<div id="array">		
+<div id="array">
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 		<article class="post-box">
@@ -9,32 +9,11 @@
 			</aside>
 			<section class="excerpt">
 				<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_excerpt(); ?></a>
-			</section>			
+			</section>
 		</article>
 <?php endwhile; ?>
 	</div><!--#array-->
-	<nav class="pagination-index clearfix">
-		<?php
-			global $wp_query;
-			$big = 99999999;
-			echo paginate_links(array(
-		        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-		        'format' => '?paged=%#%',
-		        'total' => $wp_query->max_num_pages,
-		        'current' => max(1, get_query_var('paged')),
-		        'show_all' => false,
-		        'end_size' => 2,
-		        'mid_size' => 3,
-		        'prev_next' => true,
-		        'prev_text' => 'Newer entries',
-		        'next_text' => 'Older entries',
-		        'type' => 'list'
-		    ));
-		?>
-	</nav>
+	<?php include(TEMPLATEPATH . '/partials/pagination.php'); ?>
 <?php else : ?>
-	<header class="section-title">
-		<h3>404 &mdash; Not Found</h3> 
-		<p class="oops">Sorry, but the requested resource was not found on this site.</p>
-	</header>	
+	<?php include(TEMPLATEPATH . '/partials/error.php'); ?>
 <?php endif; ?>
