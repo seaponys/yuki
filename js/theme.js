@@ -17,7 +17,7 @@ $(document).ready(function () {
 		duration: 400,
 		},
 	});
-	$('#credit').append('<a class="theme" href=\"http://cats.villaseran.com\">Yuki Theme</a>.');
+	$('#credit').append('<a class="theme" href=\"http://play.kara.ph/yuki\">Yuki Theme</a>.');
 });
 
 
